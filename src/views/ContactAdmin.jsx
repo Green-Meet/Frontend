@@ -14,15 +14,15 @@ function ContactAdmin() {
     
     <div>
       <form
-        className="flex flex-col mx-auto items-center"
+        className="flex flex-col items-center space-y-3"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="grid grid-rows-3 grid-flow-col gap-4 md:w-1/2 mb-12 space-x-8">
-          
+        {/* <div className="grid grid-rows-3 grid-flow-col gap-4 md:w-1/2 lg:w-1/2 xl:w-1/3 space-x-8"> */}
+           
           <div className="flex flex-col">
-            <label htmlFor="lastName">Lastname</label>
+            <label htmlFor="lastName">Last name</label>
             <input
-              className="border-2"
+              className="border-2 w-96"
               name="lastName"
               {...register("lastName", { required: true })}
             />
@@ -33,9 +33,9 @@ function ContactAdmin() {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="firstName">Firstname</label>
+            <label htmlFor="firstName">First name</label>
             <input
-              className="border-2"
+              className="border-2 w-96"
               name="firstName"
               {...register("firstName", { required: true })}
             />
@@ -45,13 +45,31 @@ function ContactAdmin() {
               </span>
             )}
           </div>
-        </div>
-        <div className="flex flex-col pl-8">
+          
+        {/* </div> */}
+        <div className="flex flex-col">
+            <label htmlFor="email">Email</label>
+            <input
+              name="email"
+              className="border-2 w-96"
+              {...register("email", {
+                required: true,
+                maxLength: 100,
+                pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i,
+              })}
+            />
+            {errors.email && (
+              <span className="w-full text-red-600 italic text-xs">
+                Please enter a valid email
+              </span>
+            )}
+          </div>
+        <div className="flex flex-col">
             <label htmlFor="description">Commentaire</label>
             <textarea
               rows="15"
-              className="border-2 h-full"
-              {...register("Description", {
+              className="border-2 h-64 w-96"
+              {...register("description", {
                 required: true,
                 max: 200,
                 min: 50,
@@ -66,7 +84,9 @@ function ContactAdmin() {
               </span>
             )}
           </div>
+          <div className="mt-15">
         <Button type="submit">Soumettre</Button>
+        </div>
       </form>
     </div>
   );
