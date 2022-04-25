@@ -6,7 +6,6 @@ import { AuthContext } from "../App";
 import ActionsList from "./ActionsList";
 import { toast } from "react-toastify";
 
-
 import "../App.css";
 
 function ActionDetails(props) {
@@ -18,7 +17,9 @@ function ActionDetails(props) {
   const [user, setUser] = useState();
   const [isLoaded, setIsLoaded] = useState(false);
   // const [toggle, setToggle] = useState(false);
-  const [userActions, setUserActions] = useState(JSON.parse(localStorage.getItem("userActions")) || []);
+  const [userActions, setUserActions] = useState(
+    JSON.parse(localStorage.getItem("userActions")) || []
+  );
 
   useEffect(() => {
     // setIsLoading(false);
@@ -55,18 +56,18 @@ function ActionDetails(props) {
         .then((res) => {
           if (res.status === 200) {
             toast.success("Vous avez rejoint l'action !");
-            // add action id in localStorage 
+            // add action id in localStorage
             let actions = JSON.parse(localStorage.getItem("userActions")) || [];
             actions.push(id);
             setUserActions(actions);
-            localStorage.setItem(JSON.stringify(userActions));
-            console.log('USERACTIONS', userActions);
+            localStorage.setItem("userActions", JSON.stringify(userActions));
+            console.log("USERACTIONS", userActions);
           } else {
-            toast.error("vous avez déjà rejoint l'action !")
+            toast.error("vous avez déjà rejoint l'action !");
           }
         })
         .catch((err) => {
-          toast.error("Quelque chose s'est mal passé, réessayez plus tard !")
+          toast.error("Quelque chose s'est mal passé, réessayez plus tard !");
           console.log(err);
         });
       console.log(id);
@@ -83,10 +84,15 @@ function ActionDetails(props) {
           <img></img>
           <div className="flex flex-row"></div>
           <div className="md:flex md:flex-row-reverse justify-between items-center">
-            {userActions.includes(action.action_id)}
-            <div className="mb-7 md:mb-0">
-              <Button onClick={handleSubmit}>Rejoindre l'action</Button>
-            </div>
+            {userActions.includes(id) ? (
+              <div className="mb-7 md:mb-0 border-2 border-green-500">
+                <p>Already participate</p>
+              </div>
+            ) : (
+              <div className="mb-7 md:mb-0">
+                <Button onClick={handleSubmit}>Rejoindre l'action</Button>
+              </div>
+            )}
             <div className="flex flex-row">
               <h4 className="text-gmgreen-light text-lg">Organisateur : </h4>
               <p className="text-lg pl-2">
