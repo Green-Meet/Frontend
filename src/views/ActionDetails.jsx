@@ -17,11 +17,10 @@ function ActionDetails(props) {
   const [user, setUser] = useState();
   const [isLoaded, setIsLoaded] = useState(false);
   // const [toggle, setToggle] = useState(false);
-  const [userActions, setUserActions] = useState(
-    JSON.parse(localStorage.getItem("userActions")) || []
-  );
+  const [userActions, setUserActions] = useState(JSON.parse(localStorage.getItem("userActions"))|| []);
 
   useEffect(() => {
+    console.log("USERACTIONS", userActions);
     // setIsLoading(false);
     fetch(`/actions/${id}`)
       .then((res) => res.json())
