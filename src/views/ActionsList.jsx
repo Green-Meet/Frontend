@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 import "../App.css";
 
@@ -83,12 +84,17 @@ function ActionsList() {
           </div>
         </div>
       ) : (
-        <div>
-          <p className="text-red-500 text-center">
+        <div className="h-screen w-screen flex flex-col items-center text-center">
+          <p className="text-red-500 text-xl md:text-3xl">
             Aucune action ne correspond à votre recherche :(
           </p>
-          <p>
-            Etendez votre recherche ou <a href="/addAction">Créer une action</a>
+          <p className="md:text-xl text-lg">
+            Etendez votre recherche ou{" "}
+            <Link to="/addAction">
+              <span className="text-gmvert-dark font-bold">
+                créer une action
+              </span>
+            </Link>
           </p>
         </div>
       );
@@ -112,7 +118,7 @@ function ActionsList() {
     <div id="contenu" className="flex flex-col justify-center actionsList">
       <div>
         <form
-          className="flex flex-row mx-auto items-center w-1/2 space-x-4 my-10"
+          className="flex flex-row mx-auto space-x-3 items-center w-3/4 lg:w-1/2 my-10"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex flex-col w-full">

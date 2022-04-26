@@ -40,8 +40,8 @@ function RegisterForm(props) {
       .then((data) => {
         if (data.status === 201) {
           toast.success("Le nouveau compte est créé !");
-          // context.setIsAuthenticated(true);
-          return navigate("/login");
+          context.setIsAuthenticated(true);
+          return navigate("/");
         } else {
           return toast.error("L'email existe déjà");
         }
@@ -54,10 +54,10 @@ function RegisterForm(props) {
   return (
     <div>
       <form
-        className="flex flex-col mx-auto items-center my-12"
+        className="flex flex-col items-center my-8"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="flex flex-col lg:grid md:grid-rows-3 lg:grid-flow-col lg:gap-4 md:w-2/3 mb-12 ">
+        <div className="flex flex-col md:grid md:grid-rows-3 md:grid-cols-2 gap-3 md:w-2/3 mb-12">
           <div className="flex flex-col">
             <label className="font-bold" htmlFor="email">
               Email
@@ -115,7 +115,7 @@ function RegisterForm(props) {
               <p> Le mot de passe et la confirmation ne correspondent pas!</p>
             )}
           </div>
-          <div className="flex flex-col w-auto">
+          <div className="flex flex-col">
             <label className="font-bold" htmlFor="lastName">
               Nom
             </label>
@@ -161,6 +161,7 @@ function RegisterForm(props) {
             )}
           </div>
         </div>
+
         <Button type="submit">S'enregistrer</Button>
       </form>
     </div>
