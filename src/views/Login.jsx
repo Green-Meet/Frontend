@@ -1,6 +1,7 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -18,6 +19,12 @@ function Login() {
         {/* Connectez-vous maintenant et rejoignez la communauté */}
       </h3>
       <LoginForm />
+      <p className="bg-white bg-opacity-70 text-center w:3/4 px-1 sm:w-1/2 mx-2 sm:mx-auto mt-16 rounded">
+        Vous n'avez pas de compte ? Aucun problème,{" "}
+        <Link to="/register">
+          <span className="text-gmlime-dark font-bold">Enregistrez-vous!</span>
+        </Link>
+      </p>
     </div>
   );
 }

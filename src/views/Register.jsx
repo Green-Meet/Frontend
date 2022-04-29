@@ -1,6 +1,7 @@
 import React from "react";
 import RegisterForm from "../components/RegisterForm";
 import Title from "../components/Title";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -20,6 +21,12 @@ function Register() {
       </div>
 
       <RegisterForm />
+      <p className="text-center w:3/4 px-1 sm:w-1/2 mx-2 sm:mx-auto my-8 rounded">
+        Déjà engagé ?{" "}
+        <Link to="/login">
+          <span className="text-gmlime-light font-bold">Je me connecte</span>
+        </Link>
+      </p>
     </div>
   );
 }
