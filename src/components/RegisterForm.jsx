@@ -30,7 +30,7 @@ function RegisterForm(props) {
     data.city = data.city
       .split(/[\s-]+/)
       .reduce((prev, curr) => `${prev.toLowerCase()}-${curr.toLowerCase()}`);
-    fetch("/register", {
+    fetch("api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

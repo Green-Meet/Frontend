@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import ContactForm from "../components/ContactForm";
 import Button from "../components/Button";
 import { AuthContext } from "../App";
-import ActionsList from "./ActionsList";
 import { toast } from "react-toastify";
 
 
@@ -21,7 +20,7 @@ function ActionDetails(props) {
 
   useEffect(() => {
     // setIsLoading(false);
-    fetch(`/actions/${id}`)
+    fetch(`api/actions/${id}`)
       .then((res) => res.json())
       .then((res) => {
         console.log(id);
@@ -33,7 +32,7 @@ function ActionDetails(props) {
         setAddress(JSON.parse(res.data.address));
         // console.log("USER", res.data.organiser_id);
 
-        fetch(`/account/${res.data.organiser_id}`)
+        fetch(`api/account/${res.data.organiser_id}`)
           .then((res) => res.json())
           .then((res) => {
             setUser(res.data);
@@ -48,7 +47,7 @@ function ActionDetails(props) {
   // Join action
   const handleSubmit = () => {
     if (context.isAuthenticated) {
-      fetch(`/actions/${id}/join`, {
+      fetch(`api/actions/${id}/join`, {
         method: "POST",
       })
         .then((res) => {

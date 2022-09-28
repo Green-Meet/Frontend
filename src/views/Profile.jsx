@@ -15,16 +15,16 @@ function Profile(props) {
 
   // Voir promiseAll dans weather App Github Julie
   useEffect(() => {
-    fetch("/account")
+    fetch("api/account")
       .then((res) => res.json())
       .then((res) => {
         setUser(res.data);
-        fetch("/account/actions")
+        fetch("api/account/actions")
           .then((res) => res.json())
           .then((res) => {
             if (res.data) {
               setActions(res.data);
-              fetch(`/actions/organiser/${res.data[0].user_id}`)
+              fetch(`api/actions/organiser/${res.data[0].user_id}`)
                 .then((res) => res.json())
                 .then((res) => {
                   if (res.data) {
@@ -40,7 +40,7 @@ function Profile(props) {
   }, []);
 
   const deleteAction = (action_id) => {
-    fetch(`/actions/${action_id}`, {
+    fetch(`api/actions/${action_id}`, {
       method: "DELETE",
     })
       .then((res) => {

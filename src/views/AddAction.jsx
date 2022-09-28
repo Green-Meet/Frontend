@@ -43,7 +43,7 @@ function AddAction() {
       type: "ramassage",
     };
     // send data to the backend, route "/actions", method "POST"
-    fetch("/actions", {
+    fetch("api/actions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

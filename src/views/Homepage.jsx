@@ -9,7 +9,7 @@ function Homepage() {
 
   const [actions, setActions] = useState([]);
   useEffect(() => {
-    fetch("/actions")
+    fetch("api/actions")
       .then((res) => res.json())
       .then((res) => {
         setActions(res.data);

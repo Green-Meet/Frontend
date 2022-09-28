@@ -21,7 +21,7 @@ function LoginForm() {
   } = useForm();
   // send login form data to the backend ("/login" route)
   const onSubmit = (data) => {
-    fetch("/login", {
+    fetch("api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

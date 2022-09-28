@@ -31,7 +31,7 @@ function ActionsList() {
     if (userInput !== "") {
       setIsLoaded(true);
 
-      fetch(`/actions?city=${userInput}`)
+      fetch(`api/actions?city=${userInput}`)
         .then((res) => res.json())
         .then((res) => {
           setFilteredActions(res.data);
@@ -46,14 +46,13 @@ function ActionsList() {
   useEffect(() => {
     setIsLoaded(true);
 
-    fetch("/actions")
+    fetch("api/actions")
       .then((res) => res.json())
       .then((res) => {
         setActions(res.data);
         setIsLoaded(false);
       });
   }, []);
-  console.log("ActionsList");
 
   const RenderActions = () => {
     if (!actions) {
