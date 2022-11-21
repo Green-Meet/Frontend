@@ -13,7 +13,6 @@ function Profile(props) {
 
   let navigate = useNavigate();
 
-  // Voir promiseAll dans weather App Github Julie
   useEffect(() => {
     fetch("/account")
       .then((res) => res.json())
@@ -34,7 +33,6 @@ function Profile(props) {
                   }
                 });
             }
-            // console.log(res.data);
           });
       });
   }, []);

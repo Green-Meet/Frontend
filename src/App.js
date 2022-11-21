@@ -17,7 +17,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Homepage from "./views/Homepage";
 import ActionsList from "./views/ActionsList";
 import Login from "./views/login/Login";
-import Register from "./views/Register";
+import Register from "./views/register/Register";
 import Contributors from "./views/Contributors";
 import Mentions from "./views/Mentions";
 import ContactAdmin from "./views/ContactAdmin";
