@@ -1,16 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 // Components
-import Button from "../components/Button";
-import Title from "../components/Title";
+import Button from "../../components/Button";
 // toastify
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-import "../App.css";
+import "../../App.css";
 
-function AddAction() {
-  const navigate = useNavigate();
+function AddActionForm() {
+    const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -67,13 +66,8 @@ function AddAction() {
   };
 
   return (
-    <div className="addAction">
-      <div className="pt-24">
-        <h1 className="text-center text-white text-lg md:text-xl lg:text-3xl">
-          Organiser une action
-        </h1>
-      </div>
-      <div id="contenu" className="mt-16">
+    <>
+        <div id="contenu" className="mt-16">
         {/* FORM */}
         <form
           className="flex flex-col sm:mx-10 items-center mx-3"
@@ -266,8 +260,8 @@ function AddAction() {
           </div>
         </form>
       </div>
-    </div>
-  );
+    </>
+  )
 }
 
-export default AddAction;
+export default AddActionForm;

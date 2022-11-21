@@ -16,13 +16,13 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // Views
 import Homepage from "./views/Homepage";
 import ActionsList from "./views/ActionsList";
-import Login from "./views/Login";
+import Login from "./views/login/Login";
 import Register from "./views/Register";
 import Contributors from "./views/Contributors";
 import Mentions from "./views/Mentions";
 import ContactAdmin from "./views/ContactAdmin";
 import ActionDetails from "./views/ActionDetails";
-import AddAction from "./views/AddAction";
+import AddAction from "./views/addAction/AddAction";
 import Profile from "./views/Profile";
 import ModifyAction from "./views/ModifyAction";
 
