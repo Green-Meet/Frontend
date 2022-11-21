@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import ContactForm from "../components/ContactForm";
 import Button from "../components/Button";
 import { AuthContext } from "../App";
-import ActionsList from "./ActionsList";
 import { toast } from "react-toastify";
 
 
@@ -17,7 +16,6 @@ function ActionDetails(props) {
   const [address, setAddress] = useState();
   const [user, setUser] = useState();
   const [isLoaded, setIsLoaded] = useState(false);
-  // const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     // setIsLoading(false);
@@ -145,7 +143,6 @@ function ActionDetails(props) {
   };
 
   if (user) {
-    console.log(user);
     return RenderActions();
   } else {
     <div className="ml-96 mt-52 loader flex flex-col items-center">
@@ -153,7 +150,7 @@ function ActionDetails(props) {
         <div className="round1"></div>
         <div className="round2"></div>
       </div>
-    </div>;
+    </div>
   }
 }
 

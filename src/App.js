@@ -24,7 +24,7 @@ import ContactAdmin from "./views/ContactAdmin";
 import ActionDetails from "./views/ActionDetails";
 import AddAction from "./views/addAction/AddAction";
 import Profile from "./views/Profile";
-import ModifyAction from "./views/ModifyAction";
+import ModifyAction from "./views/modifyAction/ModifyAction";
 
 // Context
 export const AuthContext = createContext();
