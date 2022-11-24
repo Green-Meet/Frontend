@@ -40,7 +40,6 @@ function App() {
     fetch("/account/isLogged")
       .then((res) => res.json())
       .then((res) => {
-        console.log("CONNECTE", res);
         if (res.message === "You are not logged in") {
           setIsAuthenticated(false);
         } else {
