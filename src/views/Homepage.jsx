@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ActionCard from "../components/ActionCard";
 import ArrowButton from "../components/ArrowButton";
 import Title from "../components/Title";
@@ -25,11 +25,6 @@ function Homepage() {
     <>
       <div>
         <Title />
-        {/* <img
-          src="/img/balais.jpg"
-          alt="Balais"
-          className="h-72 md:h-80 w-full md:w-5/6 lg:h-96 mx-auto"
-        /> */}
         <div>
           <h3
             className="my-11 mx-12 text-gmgreen font-bold text-xl"
@@ -77,9 +72,6 @@ function Homepage() {
               })}
         </div>
       </div>
-      {/* <div className="text-right m-6">
-        <Link to="/actions">Je recherche une action dans ma ville</Link>
-      </div> */}
       <div className="text-right mr-10 mb-11 mx-10">
         <ArrowButton onClick={handleClick}>
           Je recherche une action près de chez moi

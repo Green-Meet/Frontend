@@ -1,19 +1,16 @@
 import { React, useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 // Components
-import Button from "./Button";
+import Button from "../../components/Button";
 // Context
-import { AuthContext } from "../App";
+import { AuthContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 //toastify
 import { toast } from "react-toastify";
 
 function LoginForm() {
-  // context
   const context = useContext(AuthContext);
-  // navigation
   const navigate = useNavigate();
-  // react-hook-form
   const {
     register,
     handleSubmit,
@@ -21,7 +18,7 @@ function LoginForm() {
   } = useForm();
   // send login form data to the backend ("/login" route)
   const onSubmit = (data) => {
-    fetch("api/login", {
+    fetch("/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

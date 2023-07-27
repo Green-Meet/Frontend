@@ -1,6 +1,5 @@
 import React from "react";
-import RegisterForm from "../components/RegisterForm";
-import Title from "../components/Title";
+import RegisterForm from "./RegisterForm";
 
 function Register() {
   return (
@@ -18,7 +17,6 @@ function Register() {
           Connectez-vous maintenant et rejoignez la communauté
         </h3>
       </div>
-
       <RegisterForm />
     </div>
   );

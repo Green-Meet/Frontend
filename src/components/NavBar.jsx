@@ -96,7 +96,6 @@ function NavBar() {
       />
       {menuOpen && (
         <MobileMenu>
-          {/* <div className=""> */}
           <div className="flex flex-col space-y-2">
             <a
               className="text-white font-semibold hover:text-gmlime-light"
@@ -108,7 +107,6 @@ function NavBar() {
             {navLinks}
           </div>
           <div className="flex flex-col space-y-2 py-5">{navConnexion}</div>
-          {/* </div> */}
         </MobileMenu>
       )}
     </div>

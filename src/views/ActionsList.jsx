@@ -137,9 +137,12 @@ function ActionsList() {
             />
             {/* Message d'erreur si input invalide : */}
             {errors.city && (
-              <span className="w-full text-red-600 italic text-xs">
-                Please enter a valid city
+              <div className="static">
+                <span className="w-full text-red-600 italic text-xs mt-1 absolute">
+                Entrez un nom de ville valide
               </span>
+              </div>
+              
             )}
           </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
-import LoginForm from "../components/LoginForm";
-import "../App.css";
+import LoginForm from "./LoginForm";
+import "../../App.css";
 
 function Login() {
   return (
@@ -15,7 +15,6 @@ function Login() {
         id="contenu"
       >
         Pour participer, connectez-vous à votre compte
-        {/* Connectez-vous maintenant et rejoignez la communauté */}
       </h3>
       <LoginForm />
     </div>

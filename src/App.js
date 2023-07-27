@@ -16,15 +16,15 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // Views
 import Homepage from "./views/Homepage";
 import ActionsList from "./views/ActionsList";
-import Login from "./views/Login";
-import Register from "./views/Register";
+import Login from "./views/login/Login";
+import Register from "./views/register/Register";
 import Contributors from "./views/Contributors";
 import Mentions from "./views/Mentions";
 import ContactAdmin from "./views/ContactAdmin";
 import ActionDetails from "./views/ActionDetails";
-import AddAction from "./views/AddAction";
+import AddAction from "./views/addAction/AddAction";
 import Profile from "./views/Profile";
-import ModifyAction from "./views/ModifyAction";
+import ModifyAction from "./views/modifyAction/ModifyAction";
 
 // Context
 export const AuthContext = createContext();
@@ -40,7 +40,6 @@ function App() {
     fetch("/account/isLogged")
       .then((res) => res.json())
       .then((res) => {
-        console.log("CONNECTE", res);
         if (res.message === "You are not logged in") {
           setIsAuthenticated(false);
         } else {
@@ -49,9 +48,7 @@ function App() {
       });
   }, []);
 
-  const handleClick = () => {
-    console.log("COUCOU");
-  };
+
   // isAuthenticated state (goes in context value)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userInfo, setUserInfo] = useState({});

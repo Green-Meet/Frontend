@@ -13,7 +13,6 @@ function Profile(props) {
 
   let navigate = useNavigate();
 
-  // Voir promiseAll dans weather App Github Julie
   useEffect(() => {
     fetch("api/account")
       .then((res) => res.json())
@@ -34,7 +33,6 @@ function Profile(props) {
                   }
                 });
             }
-            // console.log(res.data);
           });
       });
   }, []);
@@ -83,12 +81,8 @@ function Profile(props) {
       </div>
     );
   };
-  // let city =
-  //         user[0].city.charAt(0).toUpperCase() + user[0].city.slice(1);
-  //       user[0].city = city.replace(/(-)/gi, " ");
 
   const RenderUser = () => {
-    // console.log("user", user);
     if (!user) {
       return (
         <div className="ml-96 mt-52 loader flex flex-col items-center">
@@ -116,8 +110,6 @@ function Profile(props) {
   };
 
   const RenderActions = () => {
-    // console.log("ACTIONS", actions);
-
     if (!actions) {
       return (
         <div className="ml-96 mt-52 loader flex flex-col items-center">
@@ -160,8 +152,6 @@ function Profile(props) {
   };
 
   const RenderOrganiser = () => {
-    console.log("organiseActions", organiseActions);
-
     if (!organiseActions) {
       return (
         <div className="ml-96 mt-52 loader flex flex-col items-center">
