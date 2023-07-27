@@ -48,9 +48,7 @@ function App() {
       });
   }, []);
 
-  const handleClick = () => {
-    console.log("COUCOU");
-  };
+
   // isAuthenticated state (goes in context value)
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (

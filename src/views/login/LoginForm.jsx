@@ -9,11 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function LoginForm() {
-  // context
   const context = useContext(AuthContext);
-  // navigation
   const navigate = useNavigate();
-  // react-hook-form
   const {
     register,
     handleSubmit,
@@ -21,7 +18,7 @@ function LoginForm() {
   } = useForm();
   // send login form data to the backend ("/login" route)
   const onSubmit = (data) => {
-    fetch("/login", {
+    fetch("/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

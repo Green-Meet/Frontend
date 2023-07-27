@@ -15,7 +15,6 @@ function Login() {
         id="contenu"
       >
         Pour participer, connectez-vous à votre compte
-        {/* Connectez-vous maintenant et rejoignez la communauté */}
       </h3>
       <LoginForm />
     </div>
