@@ -31,10 +31,10 @@ function ActionsList() {
     if (userInput !== "") {
       setIsLoaded(true);
 
-      fetch(`api/actions?city=${userInput}`)
+      fetch(`http://localhost:8001/actions?city=${userInput}`)
         .then((res) => res.json())
         .then((res) => {
-          setFilteredActions(res.data);
+          setFilteredActions(res);
           setIsLoaded(false);
         })
         .catch((err) => {
@@ -46,10 +46,10 @@ function ActionsList() {
   useEffect(() => {
     setIsLoaded(true);
 
-    fetch("api/actions")
+    fetch("http://localhost:8001/actions")
       .then((res) => res.json())
       .then((res) => {
-        setActions(res.data);
+        setActions(res);
         setIsLoaded(false);
       });
   }, []);

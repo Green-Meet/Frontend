@@ -9,11 +9,10 @@ function Homepage() {
 
   const [actions, setActions] = useState([]);
   useEffect(() => {
-    fetch("api/actions")
+    fetch("http://localhost:8001/actions")
       .then((res) => res.json())
       .then((res) => {
-        setActions(res.data);
-        console.log(actions);
+        setActions(res);
       });
   }, []);
 

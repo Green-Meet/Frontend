@@ -1,5 +1,4 @@
 import React from "react";
-import ArrowButton from "../components/ArrowButton";
 
 function Mentions(props) {
   return (

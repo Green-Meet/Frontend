@@ -17,7 +17,7 @@ function ContactAdmin() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("api/contact",{
+    fetch("contact",{
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

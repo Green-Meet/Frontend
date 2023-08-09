@@ -24,7 +24,7 @@ function ModifyActionForm() {
   // useEffect : Fetch pour récupérer les infos à modifier
   useEffect(() => {
     // setIsLoading(false);
-    fetch(`/actions/${action_id}`)
+    fetch(`http://localhost:8001/actions/${action_id}`)
       .then((res) => res.json())
       .then((res) => {
         let city =
@@ -69,7 +69,7 @@ function ModifyActionForm() {
       type: "ramassage",
     };
     // send data to the backend, route "/actions", method "POST"
-    fetch(`/actions/${action_id}`, {
+    fetch(`http://localhost:8001/actions/${action_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

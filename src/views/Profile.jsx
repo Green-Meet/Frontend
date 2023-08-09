@@ -14,21 +14,19 @@ function Profile(props) {
   let navigate = useNavigate();
 
   useEffect(() => {
-    fetch("api/account")
+    fetch("http://localhost:8001/account")
       .then((res) => res.json())
       .then((res) => {
         setUser(res.data);
-        fetch("api/account/actions")
+        fetch("http://localhost:8001/account/actions")
           .then((res) => res.json())
           .then((res) => {
             if (res.data) {
               setActions(res.data);
-              fetch(`api/actions/organiser/${res.data[0].user_id}`)
+              fetch(`http://localhost:8001/actions/organiser/${res.data[0].user_id}`)
                 .then((res) => res.json())
                 .then((res) => {
                   if (res.data) {
-                    console.log("DATA", res.data);
-
                     setOrganiseActions(res.data);
                   }
                 });
@@ -38,7 +36,7 @@ function Profile(props) {
   }, []);
 
   const deleteAction = (action_id) => {
-    fetch(`api/actions/${action_id}`, {
+    fetch(`actions/${action_id}`, {
       method: "DELETE",
     })
       .then((res) => {

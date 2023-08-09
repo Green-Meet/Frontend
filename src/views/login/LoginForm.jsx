@@ -18,7 +18,7 @@ function LoginForm() {
   } = useForm();
   // send login form data to the backend ("/login" route)
   const onSubmit = (data) => {
-    fetch("/auth/login", {
+    fetch("http://localhost:8001/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,16 +28,17 @@ function LoginForm() {
       .then((res) => res.json())
       .then((res) => {
         if (res) {
-          // toast.success("Tu es connecté!");
-          context.setIsAuthenticated(true);
-          context.setUserInfo(res)
-          navigate("/");
+			toast.success("Tu es connecté!");
+			context.setIsAuthenticated(true);
+			context.setUserInfo(res)
+			navigate("/");
         } else {
           toast.error("Identifiant ou mot de passe incorrect");
         }
       })
       .catch((err) =>
-        toast.error("Quelque chose s'est mal passé, réessayez plus tard!")
+	  console.log(err)
+        //toast.error("Quelque chose s'est mal passé, réessayez plus tard!")
       );
   };
   // Si la checkbox est activée, on garde le email dans le local storage :

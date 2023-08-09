@@ -18,25 +18,22 @@ function ActionDetails(props) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // setIsLoading(false);
-    fetch(`api/actions/${id}`)
+    fetch(`http://localhost:8001/actions/${id}`)
       .then((res) => res.json())
       .then((res) => {
         console.log(id);
         let city =
-          res.data.city.charAt(0).toUpperCase() + res.data.city.slice(1);
-        res.data.city = city.replace(/(-)/gi, " ");
+          res.city.charAt(0).toUpperCase() + res.city.slice(1);
+        res.city = city.replace(/(-)/gi, " ");
 
-        setAction(res.data);
-        setAddress(JSON.parse(res.data.address));
-        // console.log("USER", res.data.organiser_id);
+        setAction(res);
+        setAddress(JSON.parse(res.address));
 
-        fetch(`api/account/${res.data.organiser_id}`)
+        fetch(`http://localhost:8001/account/${res.organiser_id}`)
           .then((res) => res.json())
           .then((res) => {
-            setUser(res.data);
+            setUser(res);
             setIsLoaded(true);
-            // console.log("USER", res);
           });
       })
       .catch((err) => {
@@ -46,7 +43,7 @@ function ActionDetails(props) {
   // Join action
   const handleSubmit = () => {
     if (context.isAuthenticated) {
-      fetch(`api/actions/${id}/join`, {
+      fetch(`actions/${id}/join`, {
         method: "POST",
       })
         .then((res) => {
